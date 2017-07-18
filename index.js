@@ -1,7 +1,7 @@
 'use strict';
 /* eslint-disable no-mixed-operators */
 module.exports = function (red, green, blue, alpha) {
-	const isPercent = (red + (alpha || '')).toString().includes('%');
+	const isPercent = (red + (alpha || '')).toString().indexOf('%') !== -1;
 
 	if (typeof red === 'string') {
 		const res = red.match(/(0?\.?\d{1,3})%?\b/g).map(Number);
